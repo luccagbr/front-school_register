@@ -1,8 +1,10 @@
+import "../app/globals.css";
+
 function App() {
     return (
-        <>
-            <div>Teste</div>
-        </>
+        <div>
+            <div className='bg-primary text-primary-foreground'>Hello</div>
+        </div>
     );
 }
 
