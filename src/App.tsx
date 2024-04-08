@@ -1,9 +1,13 @@
 import "../app/globals.css";
+import { Nav } from "./components/Nav/Nav";
+import { SideBar } from "./components/SideBar/SideBar";
 
 function App() {
     return (
-        <div>
-            <div className='bg-primary text-primary-foreground'>Hello</div>
+        <div style={{ width: "100vw", height: "100vh" }}>
+            <SideBar>
+                <Nav />
+            </SideBar>
         </div>
     );
 }
