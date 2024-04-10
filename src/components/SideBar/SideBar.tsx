@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { Button } from "../ui/button";
+import AppIcon from "../../assets/apps.svg?react";
+import DocumentIcon from "../../assets/document.svg?react";
+import DashboardIcon from "../../assets/chart-histogram.svg?react";
 
 type SideBarProps = {
     children: React.ReactNode;
@@ -27,31 +31,27 @@ export function SideBar({ children }: SideBarProps) {
                         gap: "40px",
                     }}>
                     <li style={{ marginBottom: "15px" }}>
-                        <button>
+                        <a href='#'>
                             <img src='/src/assets/Group 2844.png' alt='Teste' width='25px' />
-                        </button>
+                        </a>
                     </li>
                     <li>
-                        <button>
-                            <img src='/src/assets/apps.svg' alt='Teste' width='20px' />
-                        </button>
+                        <Button>
+                            <AppIcon fill='white' width='20px' height='20px' />
+                        </Button>
                     </li>
                     <li>
-                        <button>
-                            <img src='/src/assets/document.svg' alt='Teste' width='20px' />
-                        </button>
+                        <Button>
+                            <DocumentIcon fill='white' width='20px' height='20px' />
+                        </Button>
                     </li>
                     <li>
-                        <img src='/src/assets/chart-histogram.svg' alt='Teste' width='20px' />
-                    </li>
-                    <li>
-                        <button>
-                            <img src='/src/assets/apps.svg' alt='Teste' width='20px' />
-                        </button>
+                        <Button>
+                            <DashboardIcon fill='white' width='20px' height='20px' />
+                        </Button>
                     </li>
                 </ol>
             </nav>
-
             <div style={{ display: "flex", height: "'100vh", paddingLeft: "70px" }}>{children}</div>
         </>
     );
