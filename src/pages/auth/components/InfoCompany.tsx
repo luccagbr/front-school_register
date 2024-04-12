@@ -1,11 +1,14 @@
-import { useState } from "react";
-
+import { useState, useRef } from "react";
 interface IImage {
     id: number;
+    alt: string;
 }
 
 export function InfoCompany() {
-    const [image, setImage] = useState<number>(0);
+    const [image, setImage] = useState(0);
+
+    const refInterval = useRef(0);
+
     let images: any = [
         {
             id: 0,
@@ -22,19 +25,14 @@ export function InfoCompany() {
     ];
 
     const handleChangeImage = (id: number) => {
-        if (id !== image) {
-            setImage((val) => (val = id));
-        }
+        setImage((val) => (val = id));
     };
 
-    (function () {
-        setInterval(() => {
-            console.log("teste");
-            let i = images[image];
+    // refInterval.current = setInterval(() => {
+    //     let i = images[image];
 
-            handleChangeImage(i.id === 0 ? 1 : i.id === 1 ? 2 : 0);
-        }, 10000);
-    })();
+    //     handleChangeImage(i.id === 0 ? 1 : i.id === 1 ? 2 : 0);
+    // }, 3000);
 
     return (
         <div className='flex flex-col w-full h-auto sm:h-full bg-green-700 justify-end'>
