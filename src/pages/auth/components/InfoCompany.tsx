@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 interface IImage {
     id: number;
     alt: string;
@@ -6,8 +6,6 @@ interface IImage {
 
 export function InfoCompany() {
     const [image, setImage] = useState(0);
-
-    const refInterval = useRef(0);
 
     let images: any = [
         {
@@ -27,12 +25,6 @@ export function InfoCompany() {
     const handleChangeImage = (id: number) => {
         setImage((val) => (val = id));
     };
-
-    // refInterval.current = setInterval(() => {
-    //     let i = images[image];
-
-    //     handleChangeImage(i.id === 0 ? 1 : i.id === 1 ? 2 : 0);
-    // }, 3000);
 
     return (
         <div className='flex flex-col w-full h-auto sm:h-full bg-green-700 justify-end'>
