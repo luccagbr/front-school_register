@@ -1,4 +1,3 @@
-import { BaseLayout } from "@/components/BaseLayout/index";
 import { useAuth } from "@/contexts/AuthContext";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
@@ -6,6 +5,7 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import DarkTheme from "@/themes/dark-theme";
 import LightTheme from "@/themes/light-theme";
+import { BaseLayout } from "@/styles/base-layout";
 
 export function Router() {
     const [theme, setTheme] = useState<"dark" | "light">("dark");

@@ -1,3 +1,5 @@
+import { Container } from "@/styles/container";
+
 export function Login() {
-    return <>Login</>;
+    return <Container></Container>;
 }
