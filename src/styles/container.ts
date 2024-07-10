@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+type ContainerProps = {
+    $width?: string;
+    $height?: string;
+};
+
+export const Container = styled.div.attrs<ContainerProps>((props) => ({
+    $width: props.$width || "100%",
+    $height: props.$height || "",
+}))`
     display: flex;
-    width: 100%;
+    width: ${(props) => props.$width};
+    ${(props) => props.$height && "height: " + props.$height + ";"}
 `;

@@ -8,6 +8,12 @@ export function PublicRoute() {
         {
             path: "/login",
             element: <Login />,
+            children: [
+                {
+                    path: "teste",
+                    element: <>Login teste</>,
+                },
+            ],
         },
         {
             path: "/*",
