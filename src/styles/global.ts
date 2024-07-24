@@ -5,10 +5,16 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Kanit", sans-serif;
+    font-family: "Kanit", sans-serif;   
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
 
     :root {
-        font-size: 24px;
+        font-size: 22px;
 
         @media (min-width: 768px) {
             font-size: 18px;
@@ -18,5 +24,4 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 16px;
         }
     }
-}
 `;

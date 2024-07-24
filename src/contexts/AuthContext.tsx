@@ -1,5 +1,8 @@
+import DarkTheme from "@/themes/dark-theme";
+import LightTheme from "@/themes/light-theme";
 import { PeopleInfo } from "@/types/user.type";
 import { FC, createContext, useContext, useState } from "react";
+import { ThemeProvider } from "styled-components";
 
 interface Props {
     children: React.ReactNode;
@@ -29,6 +32,7 @@ interface IUser {
 type AuthContextType = {
     user: IUser | null;
     routes: IRoutes[];
+    theme: string;
     saveRoutes: (params: IRoutes[]) => void;
 };
 
@@ -37,6 +41,7 @@ const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 export const AuthContextProvider: FC<Props> = ({ children }) => {
     const [user, setUser] = useState<IUser | null>(null);
     const [routes, setRoutes] = useState<IRoutes[]>([]);
+    const [theme, setTheme] = useState<"dark" | "light">("dark");
 
     const saveRoutes = (params: IRoutes[]) => {
         setRoutes(params);
@@ -47,9 +52,10 @@ export const AuthContextProvider: FC<Props> = ({ children }) => {
             value={{
                 user,
                 routes,
+                theme,
                 saveRoutes,
             }}>
-            {children}
+            <ThemeProvider theme={theme === "dark" ? DarkTheme : LightTheme}>{children}</ThemeProvider>
         </AuthContext.Provider>
     );
 };

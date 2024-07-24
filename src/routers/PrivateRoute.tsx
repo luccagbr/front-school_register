@@ -1,19 +1,21 @@
 import { useAuth } from "@/contexts/AuthContext";
 import MyComponent from "../routers/component";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouteObject, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 type ChildrenInfo = {
     component: string;
     menu: string;
     path: string;
+    loader?: string;
+    component_error?: string;
     children: ChildrenInfo[];
 };
 
 export function PrivateRoute() {
     // const { routes } = useAuth();
 
-    const routeMapping = (params: ChildrenInfo[]) => {
-        let routesFromUser = params.map((route) => {
+    const routeMapping = (params: ChildrenInfo[]): RouteObject[] => {
+        let routesFromUser = params.map((route): RouteObject => {
             if (route.children.length) {
                 const children = routeMapping(route.children);
 
@@ -47,7 +49,7 @@ export function PrivateRoute() {
                         {
                             component: "Login",
                             menu: "",
-                            path: "",
+                            path: "login",
                             children: [],
                         },
                     ],

@@ -10,6 +10,4 @@ export const Box = styled.div.attrs<BoxProps>((props) => ({
     $height: props.$height,
 }))`
     display: flex;
-    width: ${(props) => props.$width};
-    ${(props) => props.$height && props.$height.length && "height: " + props.$height + ";"}
 `;
