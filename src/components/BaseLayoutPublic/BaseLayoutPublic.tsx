@@ -6,7 +6,6 @@ import { Outlet } from "react-router-dom";
 export function BaseLayoutPublic() {
     return (
         <BaseLayout>
-            Teste
             <Outlet />
         </BaseLayout>
     );

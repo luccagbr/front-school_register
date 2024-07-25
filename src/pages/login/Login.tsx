@@ -6,12 +6,14 @@ export function Login() {
     const [isStatusModal, setIsStatusModal] = useState(false);
 
     return (
-        <div style={{ display: "flex", border: "1px solid blue", flexDirection: "column" }}>
-            <Box style={{ border: "1px solid pink" }} onClick={() => setIsStatusModal((prev) => !prev)}>
-                Teste
-            </Box>
+        <>
+            <div style={{ height: "100%", border: "1px solid red", width: "100%", position: "relative" }}>
+                <Box style={{ border: "1px solid pink" }} onClick={() => setIsStatusModal((prev) => !prev)}>
+                    Teste
+                </Box>
+            </div>
 
             <Modal open={isStatusModal}>Teste</Modal>
-        </div>
+        </>
     );
 }
