@@ -33,6 +33,7 @@ type AuthContextType = {
     user: IUser | null;
     routes: IRoutes[];
     theme: string;
+    changeTheme: () => void;
     saveRoutes: (params: IRoutes[]) => void;
 };
 
@@ -47,6 +48,10 @@ export const AuthContextProvider: FC<Props> = ({ children }) => {
         setRoutes(params);
     };
 
+    const changeTheme = () => {
+        setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    };
+
     return (
         <AuthContext.Provider
             value={{
@@ -54,6 +59,7 @@ export const AuthContextProvider: FC<Props> = ({ children }) => {
                 routes,
                 theme,
                 saveRoutes,
+                changeTheme,
             }}>
             <ThemeProvider theme={theme === "dark" ? DarkTheme : LightTheme}>{children}</ThemeProvider>
         </AuthContext.Provider>
