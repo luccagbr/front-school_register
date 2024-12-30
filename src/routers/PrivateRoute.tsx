@@ -1,5 +1,5 @@
 import { useAuth } from "@/contexts/AuthContext";
-import MyComponent from "../routers/component";
+import MyComponent from "./Component";
 import { RouteObject, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 type ChildrenInfo = {

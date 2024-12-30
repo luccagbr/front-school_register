@@ -1,11 +1,11 @@
 import { useAuth } from "@/contexts/AuthContext";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
-import { BaseLayout } from "@/styles/base-layout";
+import { useState } from "react";
 
 export function Router() {
     const { user } = useAuth();
-    const isConnected = false;
+    const [isConnected, setIsConnected] = useState<Boolean>(false);
 
-    return <BaseLayout>{isConnected ? <PrivateRoute /> : <PublicRoute />}</BaseLayout>;
+    return <>{isConnected ? <PrivateRoute /> : <PublicRoute />}</>;
 }

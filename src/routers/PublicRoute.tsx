@@ -1,12 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import MyComponent from "../routers/component.tsx";
-import { NotFound } from "@/components/NotFound/NotFound.tsx";
+import MyComponent from "./Component.jsx";
+import { NotFound } from "@/components/NotFound.tsx";
 
 export function PublicRoute() {
     const router = createBrowserRouter([
         {
             path: "login",
-            element: <>teste</>,
+            element: <MyComponent tag='Login' />,
         },
         {
             path: "/*",

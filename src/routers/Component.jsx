@@ -1,8 +1,8 @@
 import { Component } from "react";
+import Login from "../pages/Login/Login";
+
 class MyComponent extends Component {
     components = {
-        Home: Home,
-        Dashboard: Dashboard,
         Login: Login,
     };
 
