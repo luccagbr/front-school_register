@@ -16,6 +16,8 @@ const HeaderCompany = styled.header`
     }
 `;
 
+const DivCompany = styled.div``;
+
 export function InfoCompany() {
     return <HeaderCompany>InfoCompany</HeaderCompany>;
 }

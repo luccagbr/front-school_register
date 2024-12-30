@@ -1,9 +1,9 @@
 import { Router } from "./routers/Router";
 import { AuthContextProvider } from "./contexts/AuthContext";
-import { GlobalStyle } from "./styles/global";
 import { useEffect, useState } from "react";
 import { THEME } from "./constants/local-storage";
 import { HomePage } from "./components/HomePage";
+import { GlobalStyle } from "./styles/global";
 
 function App() {
     const localTheme = localStorage.getItem(window.btoa(THEME)) as "light" | "dark";
@@ -19,7 +19,7 @@ function App() {
 
     return (
         <HomePage>
-            <GlobalStyle $theme={theme} />
+            <GlobalStyle />
             <AuthContextProvider>
                 <Router />
             </AuthContextProvider>
