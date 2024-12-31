@@ -6,11 +6,13 @@ import { HomePage } from "./components/HomePage";
 import { GlobalStyle } from "./styles/global";
 
 function App() {
-    const localTheme = localStorage.getItem(window.btoa(THEME)) as "light" | "dark";
+    const localTheme = localStorage.getItem(window.btoa(THEME)) as "light" | "dark" | null;
     const [theme, setTheme] = useState<"light" | "dark">(localTheme ?? "dark");
 
     useEffect(() => {
-        if (localTheme === undefined) {
+        console.log(typeof localTheme);
+
+        if (localTheme == null) {
             localStorage.setItem(window.btoa(THEME), theme);
         }
 
@@ -18,12 +20,12 @@ function App() {
     }, [localTheme]);
 
     return (
-        <HomePage>
+        <>
             <GlobalStyle />
             <AuthContextProvider>
                 <Router />
             </AuthContextProvider>
-        </HomePage>
+        </>
     );
 }
 

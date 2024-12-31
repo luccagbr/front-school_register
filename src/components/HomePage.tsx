@@ -7,6 +7,8 @@ type THomePage = {
 export const HomePageStyle = styled.div`
     width: 100vw;
     height: 100vh;
+    color: ${(props) => props.theme.color.primary.foreground};
+    background: ${(props) => props.theme.color.primary.background};
 `;
 
 export const HomePage: React.FC<THomePage> = ({ children }) => {

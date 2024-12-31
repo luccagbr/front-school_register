@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const SectionStyle = styled.section`
@@ -6,9 +7,24 @@ const SectionStyle = styled.section`
     justify-content: center;
     align-items: center;
     display: flex;
-    border-right: 10px solid rgba(0, 0, 0, 0.1);
+    background-color: ${(props) => props.theme.color.background};
 `;
 
+const HeaderStyle = styled.header`
+    font-size: 34px;
+`;
+
+type TOnSubmitErrors = {
+    name: string;
+    password: string;
+};
+
 export function InfoLogin() {
-    return <SectionStyle>InfoLogin</SectionStyle>;
+    const [errors, setErrors] = useState<TOnSubmitErrors | undefined>(undefined);
+
+    return (
+        <SectionStyle>
+            <HeaderStyle>Login</HeaderStyle>
+        </SectionStyle>
+    );
 }
