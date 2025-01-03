@@ -1,10 +1,12 @@
 import { ComponentProps } from "react";
 
-type TControlProps = {
+interface TControlProps extends React.ComponentProps<"input"> {
     name: string;
     type?: "text" | "password";
-} & ComponentProps<"input">;
-
-export default function Control({ name, type = "text" }: TControlProps) {
-    return <input name={name} type={type} />;
 }
+
+export const Control: React.FC<TControlProps> = ({ name, type = "text", ...props }) => {
+    return <input name={name} type={type} {...props} />;
+};
+
+export default Control;
